@@ -71,8 +71,7 @@ The same is understood better by this simple simulation of this process where we
 
 
 
-<h1> hello world </h1>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/juYwca6hJUM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![](http://img.youtube.com/vi/juYwca6hJUM/0.jpg)](http://www.youtube.com/watch?v=juYwca6hJUM "Simulation")
 
 
 Now doesn’t this thing looks like something? for those of you who follow, these moves exactly look similar to a stock, so can we use stochastic process to map the outcome of stocks? Well, stay tuned to look for answers in the **next one in this series.**
