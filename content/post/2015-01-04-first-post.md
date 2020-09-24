@@ -2,10 +2,9 @@
 title       : "Stochastic Process Part 1 - Introduction to Stochastic Processes"
 date        : 2020-09-17T10:00:01+05:30
 description : "Getting an understanding of Stochastic processes with a basic example"
-feature_image: "/images/blog/mathematics/blog_2/main.jpg"
+
 image: "/images/blog/mathematics/blog_2/main.jpg"
 author: Inderjit Singh Chahal
-tags: Mathematics Probability
 ---
 
 In this part 1, we will look at getting a better understanding of a stochastic process, in the next one we will look at some practical implementations to build on this understanding to solve some real-world problems. 
@@ -47,7 +46,7 @@ We also know that this process is done over a certain period of time, let us tak
 
 We further know from our definition that a stochastic process can be represented as a function of time, and each time step is independent of all the previous occurrences (each coin toss is independent and is not influenced by the results of the previous results). Therefore we can represent this stochastic process as:
 
-![f(t)](/images/blog/mathematics/blog_2/img-f174855ded496f60.jpg)
+![f(t)](images/blog/mathematics/blog_2/img-f174855ded496f60.jpg)
 
 ### Understanding the formula
 
