@@ -13,8 +13,8 @@ pygmentsCodefencesGuessSyntax = true
 #googleAnalytics = "XXX"
 
 [Params]
-  homeTitle = "Blogging the reel world" # Set a different text for the header on the home page
-  subtitle = "Illuminated Mind: The less boring side of personal development"
+  homeTitle = "The only way to Learn Mathematics is to do Mathematics" # Set a different text for the header on the home page
+  subtitle = "Paul Halmos"
   mainSections = ["post","posts"]
   logo = "images/me.jpg" # Expecting square dimensions
   favicon = "img/favicon.ico"
