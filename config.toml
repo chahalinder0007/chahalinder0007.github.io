@@ -13,7 +13,7 @@ pygmentsCodefencesGuessSyntax = true
 #googleAnalytics = "XXX"
 
 [Params]
-  homeTitle = "The only way to Learn Mathematics is to do Mathematics" # Set a different text for the header on the home page
+  homeTitle = "The only way to Learn mathematics is to do mathematics" # Set a different text for the header on the home page
   subtitle = "Paul Halmos"
   mainSections = ["post","posts"]
   logo = "images/me.jpg" # Expecting square dimensions
