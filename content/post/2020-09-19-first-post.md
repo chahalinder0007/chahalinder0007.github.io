@@ -2,8 +2,8 @@
 title       : "Mathematics for solving game of shells"
 date        : 2020-09-17T10:00:01+05:30
 description : "Using simple Geometric progression to solve game of shells"
-feature_image: "/images/blog/mathematics/blog_2/main.jpg"
-image: "/images/blog/mathematics/blog_2/main.jpg"
+
+
 author: Inderjit Singh Chahal
 ---
 
@@ -16,4 +16,4 @@ The kind of decisions where we maybe do our own investments, manage and protect 
 
 Do read and share your thoughts around the same, is this the best optimal result possible or can we do better than.
 
-https://sosinc.io/blog/mathematics_can_make_you_money/
+[**The link for the Blog is accessible here**](https://sosinc.io/blog/mathematics_can_make_you_money/)
