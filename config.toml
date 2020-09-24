@@ -1,0 +1,89 @@
+baseurl = "https://github.com/chahalinder0007"
+DefaultContentLanguage = "en"
+title = "Inderjit Singh Chahal"
+theme = "beautifulhugo"
+metaDataFormat = "yaml"
+pygmentsStyle = "trac"
+pygmentsUseClasses = true
+pygmentsCodeFences = true
+pygmentsCodefencesGuessSyntax = true
+#pygmentsUseClassic = true
+#pygmentOptions = "linenos=inline"
+#disqusShortname = "XXX"
+#googleAnalytics = "XXX"
+
+[Params]
+  homeTitle = "Blogging the reel world" # Set a different text for the header on the home page
+  subtitle = "Illuminated Mind: The less boring side of personal development"
+  mainSections = ["post","posts"]
+  logo = "images/me.jpg" # Expecting square dimensions
+  favicon = "img/favicon.ico"
+  dateFormat = "January 2, 2006"
+  commit = false
+  rss = false
+  comments = true
+  readingTime = true
+  wordCount = true
+  useHLJS = true
+  socialShare = true
+  delayDisqus = true
+  showRelatedPosts = true
+  hideAuthor = false
+#  gcse = "012345678901234567890:abcdefghijk" # Get your code from google.com/cse. Make sure to go to "Look and Feel" and change Layout to "Full Width" and Theme to "Classic"
+
+#[[Params.bigimg]]
+#  src = "img/triangle.jpg"
+#  desc = "Triangle"
+#[[Params.bigimg]]
+#  src = "img/sphere.jpg"
+#  desc = "Sphere"
+#  # position: see values of CSS background-position.
+#  position = "center top"
+#[[Params.bigimg]]
+#  src = "img/hexagon.jpg"
+#  desc = "Hexagon"
+
+[Author]
+  name = "Inderjit Singh Chahal"
+  website = ""
+  email = "chahalinder0007.gmail.com"
+  #facebook = "username"
+  github = "chahalinder0007"
+  #gitlab = "username"
+  #bitbucket = "username"
+  twitter = "Inderjitsingh08"
+  #reddit = "username"
+  #linkedin = "username"
+  #xing = "username"
+  #stackoverflow = "users/XXXXXXX/username"
+  #snapchat = "username"
+  #instagram = "username"
+  #youtube = "user/username" # or channel/channelname
+  #soundcloud = "username"
+  #spotify = "username"
+  #bandcamp = "username"
+  #itchio = "username"
+  #vk = "username"
+  #paypal = "username"
+  #telegram = "username"
+  #500px = "username"
+  #codepen = "username"
+  #mastodon = "url"
+  #kaggle = "username"
+  #weibo = "username"
+  #slack = "username"
+
+[[menu.main]]
+    name = "Blog"
+    url = ""
+    weight = 1
+
+[[menu.main]]
+    name = "About"
+    url = "page/about/"
+    weight = 3
+
+[[menu.main]]
+    name = "Tags"
+    url = "tags"
+    weight = 3
