@@ -1,6 +1,6 @@
 ---
 title: About me
-subtitle: Why you'd want to go on a date with me
+subtitle: Love to solve challenging problems
 comments: false
 ---
 
