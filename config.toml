@@ -10,7 +10,7 @@ pygmentsCodefencesGuessSyntax = true
 #pygmentsUseClassic = true
 #pygmentOptions = "linenos=inline"
 #disqusShortname = "XXX"
-#googleAnalytics = "XXX"
+googleAnalytics = "UA-179098818-1"
 
 [Params]
   homeTitle = "The only way to Learn mathematics is to do mathematics" # Set a different text for the header on the home page
