@@ -1,7 +1,7 @@
 ---
 title: About me
 subtitle: Love to solve challenging problems
-comments: false
+comments: True
 ---
 
 My name is Inderjit Singh Chahal. I have the following qualities:
