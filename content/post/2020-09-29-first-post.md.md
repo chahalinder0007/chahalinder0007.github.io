@@ -30,12 +30,10 @@ The TFRS gives users the ability to be able to do the following implementations:
 
 ![recomendor visual](/images/blog/TFRS/tf_visual.gif)
 
+The older implementation of collaborative filtering etc are either augmented with deep learning solutions or have ceased to exist in real-world implementation this necessitates building solutions from scratch to match the existing industry benchmark. The deficiency of the open-source tools made it a difficult affair to implement different variants of these models to create an optimal solution, TFRS release as an [open source](https://github.com/tensorflow/recommenders) tool will enable users to quickly expand on their research and build models that are capable of matching up to the existing benchmarks. 
 
 
-The older implementation of collaborative filtering etc are either augmented with deep learning solution or have ceased to exist in real world implementation this neccessatised building solutions from scratch to mathc the existing industry benchmark. The deficiecny of the open source tools made it a difficult affair to implement different variants of these models to create an optimal solution, TFRS release as an [open source](https://github.com/tensorflow/recommenders) tool will enable users to quickly expand on their research and build models that are capable of matching up to the existing benchmarks. 
-
-
-**It is a true step towards democratisation of the field of Articial intelligence.**
+**It is a true step towards democratization of the field of Artificial intelligence.**
 
 
 A simple code snippet to make a minimalistic example
