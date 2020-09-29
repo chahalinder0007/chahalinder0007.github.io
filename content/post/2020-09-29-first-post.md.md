@@ -3,6 +3,7 @@ title       : "Recommender System made easier with TFRS"
 date        : 2020-09-29T11:00:01+05:30
 description : "Implementation of recommender sysmtems made easier with google's tensorlfow Recommenders"
 feature_image: "/images/blog/TFRS/main_image.jpg"
+image: "/images/blog/TFRS/main_image.jpg"
 
 author: Inderjit Singh Chahal
 tags: [Recommendation systems, Deep Learning,Tensorflow,keras]
