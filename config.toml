@@ -13,8 +13,8 @@ pygmentsCodefencesGuessSyntax = true
 googleAnalytics = "UA-179098818-1"
 
 [Params]
-  homeTitle = "The only way to Learn mathematics is to do mathematics" # Set a different text for the header on the home page
-  subtitle = "Paul Halmos"
+  homeTitle = "'Music of Reason'  Mathematics" # Set a different text for the header on the home page
+  subtitle = "James Joseph Sylvester"
   mainSections = ["post","posts"]
   logo = "images/me.jpg" # Expecting square dimensions
   favicon = "img/favicon.ico"
