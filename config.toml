@@ -87,3 +87,8 @@ googleAnalytics = "UA-179098818-1"
     name = "Tags"
     url = "tags"
     weight = 3
+
+[[menu.main]]
+    name = "Portfolio"
+    url = "page/portfolio/"
+    weight = 3
