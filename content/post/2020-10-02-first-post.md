@@ -100,4 +100,7 @@ which comes out to be ***0.30769230769230776***
 ***meaning there are only 30% chances of success if we select Linda to be Bank Teller, therefore its more reasonable to play the odds and select Linda to be a Farmer even when she has more traits common with Bank Tellers, which is synonymous with our initial understanding that new information should only update the old belief or Prior***
 
 **Also this is the value for Posterior = 0.30769230769230776**
+
+
+** Shared image credits Researchgate
 <!-- ![formula prob](/images/blog/bayes/Likeli_4.jpg) -->
