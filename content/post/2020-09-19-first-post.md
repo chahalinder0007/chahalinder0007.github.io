@@ -5,7 +5,7 @@ description : "Using simple Geometric progression to solve game of shells"
 
 
 author: Inderjit Singh Chahal
-tags: [Mathematic]
+tags: [Mathematics]
 ---
 
 Simple applied mathematics for logical decisions in-game of shells or stocks maybe
