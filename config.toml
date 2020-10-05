@@ -40,8 +40,15 @@ googleAnalytics = "UA-179098818-1"
 #  # position: see values of CSS background-position.
 #  position = "center top"
 [[Params.bigimg]]
-  src = "img/hexagon.jpg"
+  src = "images/del.gif"
   desc = "Hexagon"
+
+#for html in markdowns
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
 
 [Author]
   name = "Inderjit Singh Chahal"
