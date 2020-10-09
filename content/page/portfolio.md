@@ -32,3 +32,33 @@ $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
 
 
 
+
+<!-- Container (Portfolio Section) -->
+<!-- <div id="portfolio" class="container-fluid text-center bg-grey">
+  <h2>Projects</h2><br>
+  <h4>What I have created so far</h4>
+  <div class="row text-center slideanim">
+    <div class="col-sm-6">
+      <div class="thumbnail">
+        <img src="/images/blog/TFRS/main_image.jpg" alt="Paris" width="400" height="300">
+        <p><strong>Paris</strong></p>
+        <p>Yes, we built Paris</p>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="thumbnail">
+        <img src="/images/blog/TFRS/main_image.jpg" alt="New York" width="400" height="300">
+        <p><strong>New York</strong></p>
+        <p>We built New York</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="/images/blog/TFRS/main_image.jpg" alt="San Francisco" width="400" height="300">
+        <p><strong>San Francisco</strong></p>
+        <p>Yes, San Fran is ours</p>
+      </div>
+    </div>
+  </div><br>
+  
+</div> -->
