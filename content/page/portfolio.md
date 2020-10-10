@@ -34,7 +34,7 @@ $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
 
 
 <!-- Container (Portfolio Section) -->
-<!-- <div id="portfolio" class="container-fluid text-center bg-grey">
+<div id="portfolio" class="container-fluid text-center bg-grey">
   <h2>Projects</h2><br>
   <h4>What I have created so far</h4>
   <div class="row text-center slideanim">
@@ -61,4 +61,4 @@ $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
     </div>
   </div><br>
   
-</div> -->
+</div>
