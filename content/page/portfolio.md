@@ -52,11 +52,13 @@ $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
         <p>We built New York</p>
       </div>
     </div>
-    <div class="col-sm-4">
-      <div class="thumbnail">
-        <img src="/images/blog/TFRS/main_image.jpg" alt="San Francisco" width="400" height="300">
-        <p><strong>San Francisco</strong></p>
-        <p>Yes, San Fran is ours</p>
+    <div class="col-sm-6">
+    	<div class="thumbnail">
+    	<img src="/images/Portfolio/portfolio/sample_1.gif" alt="New York" width="400" height="300">
+        <p><strong>Echo Cardiogram</strong></p>
+        <p><strong>Autonomous - E2E Deep-learning</strong></p>
+        <p data-toggle='collapse' data-target='#collapse-paris' style='cursor: pointer;'>A ROBOTIC INTELLIGENT RADIOLOGIST ......</p>
+        <p class='collapse' id='collapse-paris'>A fully automated device to test and quantify the functions of a radiologist using state of the art Artificial intelligence and mathematical tools to give near human and under some circumstances, better than human results</p>
       </div>
     </div>
   </div><br>
