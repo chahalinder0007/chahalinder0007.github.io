@@ -71,7 +71,7 @@ subtitle: Text generation Demo
 <body>
     <div class="messageContainer">
         <div class="messageForm">
-            <label>Type some starting Text</label>
+            <label>Type some starting Text: e.g "India is"</label>
             <textarea class="messageField" id="message"></textarea>
             <div class="error" id="error"></div>
             <div class="success" id="success"></div>
