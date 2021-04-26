@@ -3,7 +3,7 @@ title: Demo
 subtitle: Text generation Demo
 ---
 
-
+A demo that demonstrate ability of the network to churn out meaningful comprehensible sentences for English language
 
 <!DOCTYPE html>
 <html>
