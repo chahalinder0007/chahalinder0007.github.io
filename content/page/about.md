@@ -12,7 +12,7 @@ I enjoy debugging complex challenges in codes, like to contribute on community p
 
 In my free time I like to work with **financial markets**, with **automated strategies** augmented by **artificial intelligence**. 
 
-### my history
+### My history
 
 To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](https://youtu.be/yhhCVGBNFMo) and it will answer **all** your questions.
 

@@ -30,6 +30,7 @@ googleAnalytics = "UA-179098818-1"
   showRelatedPosts = true
   hideAuthor = false
   gcse = "a93c493f3aeaf2ef7" # Get your code from google.com/cse. Make sure to go to "Look and Feel" and change Layout to "Full Width" and Theme to "Classic"
+  gtm_id = "G-PH5DZ65D73"
 
 #[[Params.bigimg]]
 #  src = "img/triangle.jpg"
@@ -98,4 +99,9 @@ googleAnalytics = "UA-179098818-1"
 [[menu.main]]
     name = "Portfolio"
     url = "page/portfolio/"
+    weight = 3
+
+[[menu.main]]
+    name = "Feedback"
+    url = "page/feedback/"
     weight = 3
