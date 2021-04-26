@@ -85,7 +85,7 @@ subtitle: Text generation Demo
             let sendBtn = document.getElementById('buttonText');
             let loadingIcon = document.getElementById('loadingIcon');
             loadingIcon.style.display = 'block';
-            sendBtn.innerText = 'Please wait...';
+            sendBtn.innerText = 'Please wait... response takes some 40 seconds as its hosted on a single core machine';
             if(text){
                 text = text.trim();
                 let xhttp = new XMLHttpRequest();
