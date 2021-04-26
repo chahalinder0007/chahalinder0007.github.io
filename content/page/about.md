@@ -8,6 +8,14 @@ My name is Inderjit Singh Chahal.
 
 I enjoy working on challenging things that are new different and rare in their implementation. I like to spend hours optimizing codes or solving complex problems through simple implementations.
 
+I love to design architectures for cloud based applications, I am also a [`Google Certified Cloud Engineer`](https://www.credential.net/384317b7-698c-49b2-b68a-ebdab59b8f46)
+<iframe
+  src="https://www.credential.net/embed/384317b7-698c-49b2-b68a-ebdab59b8f46"
+  width="800"
+  height="600"
+  frameborder="0"
+  allowfullscreen>
+</iframe>
 I enjoy debugging complex challenges in codes, like to contribute on community platforms like StackOverflow, Reddit, etc.
 
 In my free time I like to work with **financial markets**, with **automated strategies** augmented by **artificial intelligence**. 
@@ -15,6 +23,7 @@ In my free time I like to work with **financial markets**, with **automated stra
 ### My history
 
 To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](https://youtu.be/yhhCVGBNFMo) and it will answer **all** your questions.
+
 
 <html>
 <body>
