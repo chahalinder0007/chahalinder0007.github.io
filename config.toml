@@ -42,7 +42,7 @@ googleAnalytics = "UA-179098818-1"
 #  position = "center top"
 [[Params.bigimg]]
   src = "images/del.gif"
-  desc = "Hexagon"
+  desc = "Inderjit Singh Chahal"
 
 #for html in markdowns
 
