@@ -6,6 +6,16 @@ comments: True
 
 My name is Inderjit Singh Chahal. 
 
+I am **Google Certified Professional Machine Learning Engineer**
+
+<iframe
+  src="https://www.credential.net/embed/10b179a7-d2d4-4a86-9b85-7d8349e5d1c8"
+  width="800"
+  height="600"
+  frameborder="0"
+  allowfullscreen>
+</iframe>
+
 I enjoy working on challenging things that are new different and rare in their implementation. I like to spend hours optimizing codes or solving complex problems through simple implementations.
 
 I love to design architectures for cloud based applications, I am also a [`Google Certified Cloud Engineer`](https://www.credential.net/384317b7-698c-49b2-b68a-ebdab59b8f46)
