@@ -10,7 +10,7 @@ pygmentsCodefencesGuessSyntax = true
 #pygmentsUseClassic = true
 #pygmentOptions = "linenos=inline"
 #disqusShortname = "XXX"
-googleAnalytics = "267276607"
+googleAnalytics = "UA-179098818-1"
 
 [Params]
   homeTitle = "'Music of Reason'  Mathematics" # Set a different text for the header on the home page
