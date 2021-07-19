@@ -29,7 +29,7 @@ googleAnalytics = "UA-179098818-1"
   delayDisqus = true
   showRelatedPosts = true
   hideAuthor = false
-  gcse = "a93c493f3aeaf2ef7" # Get your code from google.com/cse. Make sure to go to "Look and Feel" and change Layout to "Full Width" and Theme to "Classic"
+  gcse = "a93c493f3aeaf2ef7" # Get your code from google.com/cse. Make sure to go to "Look and Feel" and change Layout to "Full Width" and Theme to "Classic" 
   gtm_id = "G-PH5DZ65D73"
 
 #[[Params.bigimg]]
