@@ -30,7 +30,7 @@ googleAnalytics = "UA-179098818-1"
   showRelatedPosts = true
   hideAuthor = false
   gcse = "2b9af657ac7ec4501" # Get your code from google.com/cse. Make sure to go to "Look and Feel" and change Layout to "Full Width" and Theme to "Classic" 
-  gtm_id = "GTM-NM8299W"
+  gtm_id = "G-PH5DZ65D73"
 
 #[[Params.bigimg]]
 #  src = "img/triangle.jpg"
