@@ -104,7 +104,7 @@ subtitle: Text generation Demo
                         sendBtn.innerText = 'Send';
                     }
                 };
-                xhttp.open("POST", ` https://sosincapp.com/`, true);
+                xhttp.open("POST", ` https://text-demo.inderjit.in/`, true);
                 xhttp.setRequestHeader("Content-Type", "application/json");
                 xhttp.send(JSON.stringify(params));
             } else {
