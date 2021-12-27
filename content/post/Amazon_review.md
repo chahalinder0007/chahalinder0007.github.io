@@ -1,5 +1,5 @@
 ---
-title       : "Expanding Bernauli's Theorm to Real World - Amazon Reviews - Part 1"
+title       : "Expanding Bernauli's Theorm to Real World - Amazon Reviews"
 date        : 2021-06-02T10:00:01+05:30
 description : "Getting an understanding of Bayes Theorm with a real world example of assessing Amazon reviews statistically"
 feature_image: "/images/blog/amazon_review/share_title.jpeg"
