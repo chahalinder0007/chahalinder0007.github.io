@@ -1,6 +1,6 @@
 ---
 title: Demo 
-subtitle: Text generation Demo
+subtitle: Text generation Demo. Currently offline !!!! 
 ---
 
 
