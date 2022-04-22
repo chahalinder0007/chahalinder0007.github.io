@@ -34,6 +34,10 @@ In my free time I like to work with **financial markets**, with **automated stra
 
 To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](https://youtu.be/yhhCVGBNFMo) and it will answer **all** your questions.
 
+### Education Credentials
+<div data-iframe-width="370" data-iframe-height="270" data-share-badge-id="5bd49e4b-fcab-4c39-b3f5-756df87ae968" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+
+
 
 <html>
 <body>
