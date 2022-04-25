@@ -80,6 +80,7 @@ googleAnalytics = "UA-179098818-1"
   #kaggle = "username"
   #weibo = "username"
   #slack = "username"
+  upwork = "01315472f6d23a3c35"
 
 [[menu.main]]
     name = "Blog"
