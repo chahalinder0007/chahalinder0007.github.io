@@ -20,5 +20,10 @@
 `A Demo` for generating text from some starting input words, [click here](/page/demo-text)
 
 
-## Github Stats
-<p align="center"> <img src="https://github-readme-stats.vercel.app/api?username=chahalinder0007&show_icons=true&theme=gotham" alt="chahalinder0007" />
+## Github Commit map
+<!-- <p align="center"> <img src="https://github-readme-stats.vercel.app/api?username=chahalinder0007&show_icons=true&theme=gotham" alt="chahalinder0007" /> -->
+<!-- Prepare a container for your calendar. -->
+<!--  -->
+
+<img src="https://ghchart.rshah.org/chahalinder0007" alt="Inderjit Singh Chahal Github chart" />
+
