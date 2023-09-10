@@ -41,7 +41,7 @@ googleAnalytics = "G-PH5DZ65D73"
 #  # position: see values of CSS background-position.
 #  position = "center top"
 [[Params.bigimg]]
-  src = "images/del.gif"
+  src = "images/del2.gif"
   desc = "Inderjit Singh Chahal"
 
 #for html in markdowns
