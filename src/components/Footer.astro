@@ -1,0 +1,53 @@
+---
+const year = new Date().getFullYear();
+const socials = [
+  { label: "GitHub", href: "https://github.com/chahalinder0007" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/indejitsinghchahal" },
+  { label: "Twitter", href: "https://twitter.com/Inderjitsingh08" },
+  { label: "Stack Overflow", href: "https://stackoverflow.com/users/7805917/inder" },
+  { label: "Reddit", href: "https://www.reddit.com/user/inderjitsinghchahal" },
+  { label: "Upwork", href: "https://www.upwork.com/freelancers/~01315472f6d23a3c35" },
+];
+---
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div class="footer-lead">
+      <p class="label">Get in touch</p>
+      <a href="mailto:inder@inderjit.in" class="footer-mail display">inder@inderjit.in</a>
+    </div>
+    <nav class="footer-social mono" aria-label="Social links">
+      {socials.map((s) => (
+        <a href={s.href} target="_blank" rel="noopener noreferrer" class="link">{s.label} ↗</a>
+      ))}
+    </nav>
+  </div>
+  <div class="wrap footer-base mono">
+    <span>© {year} Inderjit Singh Chahal</span>
+    <span>Mathematics, the music of reason.</span>
+  </div>
+</footer>
+
+<style>
+  .footer { border-top: 1px solid var(--line); padding-top: clamp(3.5rem, 8vw, 6rem); padding-bottom: 2.5rem; }
+  .footer-inner {
+    display: flex; justify-content: space-between; gap: 2.5rem; flex-wrap: wrap;
+    padding-bottom: clamp(3rem, 7vw, 5rem);
+  }
+  .footer-lead .label { margin-bottom: 0.8rem; }
+  .footer-mail {
+    font-size: clamp(1.8rem, 1.2rem + 3vw, 3.4rem); font-weight: 380; letter-spacing: -0.02em;
+    background-image: linear-gradient(var(--accent), var(--accent));
+    background-size: 0% 2px; background-position: 0 100%; background-repeat: no-repeat;
+    transition: background-size 0.4s var(--ease);
+  }
+  .footer-mail:hover { background-size: 100% 2px; }
+  .footer-social { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem 2rem; font-size: 0.82rem; align-content: start; }
+  .footer-social a { color: var(--fg-dim); }
+  .footer-base {
+    display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+    padding-top: 2rem; border-top: 1px solid var(--line-soft);
+    font-size: 0.72rem; color: var(--fg-faint); letter-spacing: 0.04em;
+  }
+  @media (max-width: 560px) { .footer-social { grid-template-columns: 1fr; } }
+</style>

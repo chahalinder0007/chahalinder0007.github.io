@@ -1,0 +1,78 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../../layouts/Base.astro";
+import Nav from "../../components/Nav.astro";
+import Footer from "../../components/Footer.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+const fmt = new Intl.DateTimeFormat("en", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+---
+
+<Base title={`${post.data.title} — Inderjit Singh Chahal`} description={post.data.description}>
+  <Nav />
+
+  <article class="post">
+    <div class="wrap post-narrow">
+      <a href="/blog" class="back mono link">← All writing</a>
+
+      <header class="post-head" data-reveal>
+        <div class="post-meta mono">
+          <time datetime={post.data.date.toISOString()}>{fmt.format(post.data.date)}</time>
+          {post.data.tags.length > 0 && <span class="sep">/</span>}
+          <span class="tags">{post.data.tags.join(" · ")}</span>
+        </div>
+        <h1 class="display post-title">{post.data.title}</h1>
+        {post.data.description && <p class="post-dek">{post.data.description}</p>}
+      </header>
+
+      {post.data.heroImage && (
+        <img class="post-hero" src={post.data.heroImage} alt={post.data.title} data-reveal />
+      )}
+
+      <div class="prose" data-reveal>
+        <Content />
+      </div>
+    </div>
+  </article>
+
+  <Footer />
+</Base>
+
+<style>
+  .post { padding-top: clamp(2.5rem, 6vw, 4rem); }
+  .post-narrow { max-width: 760px; }
+  .back { display: inline-block; font-size: 0.78rem; color: var(--fg-dim); margin-bottom: 2.5rem; }
+  .post-meta {
+    display: flex; gap: 0.7rem; flex-wrap: wrap;
+    font-size: 0.74rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--fg-faint); margin-bottom: 1.2rem;
+  }
+  .post-meta .sep { color: var(--accent); }
+  .post-title {
+    font-size: clamp(2rem, 1.3rem + 3vw, 3.4rem);
+    font-weight: 380; line-height: 1.04; margin-bottom: 1.1rem;
+  }
+  .post-dek {
+    font-size: clamp(1.1rem, 1rem + 0.5vw, 1.35rem);
+    color: var(--fg-dim); font-family: var(--display); font-style: italic;
+    line-height: 1.45; max-width: 40ch;
+  }
+  .post-hero {
+    width: 100%; aspect-ratio: 16/9; object-fit: cover;
+    border: 1px solid var(--line); border-radius: 4px;
+    margin: 2.8rem 0; filter: grayscale(0.15);
+  }
+</style>

@@ -1,0 +1,19 @@
+# build output
+dist/
+.astro/
+
+# dependencies
+node_modules/
+
+# local tooling
+.claude/
+
+# logs / env
+*.log
+.env
+.env.production
+.DS_Store
+
+# hugo leftovers (legacy)
+.hugo_build.lock
+resources/_gen/

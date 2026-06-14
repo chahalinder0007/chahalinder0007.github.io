@@ -1,0 +1,79 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../../layouts/Base.astro";
+import Nav from "../../components/Nav.astro";
+import Footer from "../../components/Footer.astro";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+const fmt = new Intl.DateTimeFormat("en", { year: "numeric", month: "short" });
+---
+
+<Base title="Writing — Inderjit Singh Chahal" description="Essays on mathematics, probability and machine learning.">
+  <Nav />
+
+  <section class="section blog-top">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <span class="label idx">∞</span>
+        <h2>Writing</h2>
+        <span class="rule"></span>
+        <span class="label">{posts.length} essays</span>
+      </div>
+      <p class="blog-intro" data-reveal>
+        Notes on mathematics, probability and machine learning — mostly working
+        through ideas until they click.
+      </p>
+
+      <ul class="post-list">
+        {posts.map((post, i) => (
+          <li class="post-row" data-reveal style={`--d:${i * 60}ms`}>
+            <a href={`/blog/${post.slug}`}>
+              <span class="pr-date mono">{fmt.format(post.data.date)}</span>
+              <span class="pr-main">
+                <span class="pr-title display">{post.data.title}</span>
+                <span class="pr-desc">{post.data.description}</span>
+                <span class="pr-tags mono">{post.data.tags.join(" · ")}</span>
+              </span>
+              <span class="pr-arrow mono" aria-hidden="true">↗</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <Footer />
+</Base>
+
+<style>
+  .blog-top { padding-top: clamp(3rem, 7vw, 5rem); border-top: 0; }
+  .blog-intro {
+    max-width: 52ch; color: var(--fg-dim); margin-bottom: clamp(2.5rem, 6vw, 4rem);
+    font-size: 1.1rem;
+  }
+  .post-list { list-style: none; border-top: 1px solid var(--line); }
+  .post-row a {
+    display: grid;
+    grid-template-columns: 90px 1fr auto;
+    gap: 1.5rem;
+    align-items: baseline;
+    padding: 1.7rem 0;
+    border-bottom: 1px solid var(--line-soft);
+    transition: padding 0.35s var(--ease);
+  }
+  .post-row a:hover { padding-left: 1rem; }
+  .pr-date { font-size: 0.74rem; color: var(--fg-faint); text-transform: uppercase; letter-spacing: 0.1em; padding-top: 0.5rem; }
+  .pr-main { display: flex; flex-direction: column; gap: 0.4rem; }
+  .pr-title { font-size: clamp(1.3rem, 1.1rem + 1vw, 1.85rem); font-weight: 400; line-height: 1.1; transition: color 0.3s var(--ease); }
+  .post-row a:hover .pr-title { color: var(--accent); }
+  .pr-desc { color: var(--fg-dim); font-size: 0.95rem; max-width: 60ch; }
+  .pr-tags { font-size: 0.68rem; color: var(--fg-faint); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 0.2rem; }
+  .pr-arrow { color: var(--accent); font-size: 1.1rem; opacity: 0; transform: translate(-6px, 4px); transition: all 0.3s var(--ease); }
+  .post-row a:hover .pr-arrow { opacity: 1; transform: none; }
+  @media (max-width: 620px) {
+    .post-row a { grid-template-columns: 1fr; gap: 0.6rem; }
+    .pr-arrow { display: none; }
+  }
+</style>

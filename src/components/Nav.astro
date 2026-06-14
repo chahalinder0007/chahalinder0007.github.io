@@ -1,0 +1,67 @@
+---
+const links = [
+  { href: "#work", label: "Work" },
+  { href: "#about", label: "About" },
+  { href: "#writing", label: "Writing" },
+  { href: "#contact", label: "Contact" },
+];
+---
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="/" class="nav-brand mono" aria-label="Home">
+      <span class="dot" aria-hidden="true"></span>
+      ISC<span class="brand-full">&nbsp;/ Inderjit&nbsp;Singh&nbsp;Chahal</span>
+    </a>
+    <nav class="nav-links mono" aria-label="Primary">
+      {links.map((l) => <a href={l.href}>{l.label}</a>)}
+    </nav>
+  </div>
+</header>
+
+<style>
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: blur(12px);
+    background: color-mix(in srgb, var(--ink) 72%, transparent);
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+  }
+  .nav-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--fg);
+  }
+  .brand-full { color: var(--fg-dim); font-weight: 400; }
+  .dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 60%, transparent);
+    animation: pulse 2.6s var(--ease) infinite;
+  }
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 55%, transparent); }
+    70% { box-shadow: 0 0 0 7px transparent; }
+    100% { box-shadow: 0 0 0 0 transparent; }
+  }
+  .nav-links { display: flex; gap: 1.6rem; font-size: 0.8rem; letter-spacing: 0.02em; }
+  .nav-links a { color: var(--fg-dim); transition: color 0.25s var(--ease); }
+  .nav-links a:hover { color: var(--accent); }
+
+  @media (max-width: 620px) {
+    .brand-full { display: none; }
+    .nav-links { gap: 1rem; }
+    .nav-links a:nth-child(3) { display: none; }
+  }
+</style>
