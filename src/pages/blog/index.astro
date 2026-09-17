@@ -29,7 +29,7 @@ const fmt = new Intl.DateTimeFormat("en", { year: "numeric", month: "short" });
       <ul class="post-list">
         {posts.map((post, i) => (
           <li class="post-row" data-reveal style={`--d:${i * 60}ms`}>
-            <a href={`/blog/${post.slug}`}>
+            <a href={`/blog/${post.id}`}>
               <span class="pr-date mono">{fmt.format(post.data.date)}</span>
               <span class="pr-main">
                 <span class="pr-title display">{post.data.title}</span>

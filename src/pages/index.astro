@@ -213,8 +213,8 @@ try {
           — J.&thinsp;J. Sylvester, 1864
         </p>
         <p class="hero-lede" data-reveal style="--d:340ms">
-          I take that conviction to work — turning rigorous math into
-          <em>production deep-learning systems</em>: autonomous medical imaging,
+          I take that conviction to work — turning rigorous math
+          into <em>production deep-learning systems</em>: autonomous medical imaging,
           custom OCR objectives, attention-based NLP. Models that ship.
         </p>
         <div class="hero-cta" data-reveal style="--d:440ms">
@@ -427,7 +427,7 @@ try {
             <Fragment set:html={ghSvg} />
           ) : (
             <p class="gh-fallback mono">
-              Contribution chart unavailable at build time &mdash;
+              Contribution chart unavailable at build time &mdash;{" "}
               <a class="link" href="https://github.com/chahalinder0007" target="_blank" rel="noopener noreferrer">view it on GitHub &#8599;</a>
             </p>
           )}
@@ -478,7 +478,7 @@ try {
       <ul class="writing-list">
         {latestPosts.map((post, i) => (
           <li class="writing-row" data-reveal style={`--d:${i * 70}ms`}>
-            <a href={`/blog/${post.slug}`}>
+            <a href={`/blog/${post.id}`}>
               <span class="wr-date mono">{fmt.format(post.data.date)}</span>
               <span class="wr-body">
                 <span class="wr-title display">{post.data.title}</span>
