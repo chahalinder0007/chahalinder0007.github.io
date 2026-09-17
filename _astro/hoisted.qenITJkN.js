@@ -1,1 +1,0 @@
-import"./hoisted.Dy9LBDtG.js";const t=document.querySelector(".hero-bg video");if(t){const e=()=>t.play().catch(()=>{});e(),t.addEventListener("canplay",e,{once:!0}),document.addEventListener("visibilitychange",()=>{document.hidden||e()})}
