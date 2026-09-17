@@ -562,10 +562,10 @@ try {
       const teardown = () => EVENTS.forEach((e) => window.removeEventListener(e, stop));
       EVENTS.forEach((e) => window.addEventListener(e, stop, { passive: true }));
 
-      // count ten seconds of the page actually being looked at: a tab opened in
+      // count five seconds of the page actually being looked at: a tab opened in
       // the background should still get its nudge when it is brought forward
       let timer = null;
-      const arm = () => { if (timer === null && !document.hidden && !cancelled) timer = setTimeout(fire, 10000); };
+      const arm = () => { if (timer === null && !document.hidden && !cancelled) timer = setTimeout(fire, 5000); };
       const disarm = () => { if (timer !== null) { clearTimeout(timer); timer = null; } };
       document.addEventListener("visibilitychange", () => (document.hidden ? disarm() : arm()));
 
