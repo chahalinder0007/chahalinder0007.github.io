@@ -55,6 +55,65 @@ const projects = [
   },
 ];
 
+const certifications = [
+  {
+    id: "7cc3e382-b86c-45f1-a864-0bb3e1513f5b",
+    name: "Claude Certified Architect",
+    tier: "Professional",
+    issuer: "Anthropic",
+    img: "/images/badges/claude-architect-professional.png",
+    thumb: "/images/badges/claude-architect-professional-64.png",
+    issued: "Sep 2026",
+    validTo: "Sep 2027",
+    level: "Professional",
+    glow: "217, 119, 87",
+    blurb:
+      "Designing and leading enterprise-scale Claude deployments — integration architecture, optimisation at scale, and responsible-deployment governance.",
+    skills: [
+      "Enterprise Architecture",
+      "Context engineering",
+      "Solution Design",
+      "AI Governance",
+      "Integration Architecture",
+      "Evaluation & optimization",
+    ],
+    more: 2,
+  },
+  {
+    id: "f7ce50c0-2c19-4564-9027-d9f941c0a955",
+    name: "Professional Machine Learning Engineer",
+    tier: "Google Cloud",
+    issuer: "Google Cloud",
+    img: "/images/badges/gcp-professional-ml-engineer.png",
+    thumb: "/images/badges/gcp-professional-ml-engineer-64.png",
+    issued: "Sep 2026",
+    validTo: "Sep 2028",
+    level: "Advanced",
+    glow: "138, 170, 229",
+    blurb:
+      "Building, evaluating, productionising and optimising ML models on Google Cloud — large datasets, repeatable pipelines, responsible AI throughout.",
+    skills: [
+      "Vertex AI",
+      "ML Ops",
+      "Machine Learning",
+      "BigQuery ML",
+      "Responsible AI",
+      "AutoML",
+    ],
+    more: 5,
+  },
+];
+
+// Lapsed, kept for the record rather than claimed in the present tense.
+const pastCertifications = [
+  {
+    id: "b65b584a-ae95-436b-a529-bf5b3d1ea0c5",
+    name: "Associate Cloud Engineer",
+    issuer: "Google Cloud",
+    window: "2022 \u2192 2024",
+  },
+];
+
 const skills = [
   {
     head: "Deep Learning",
@@ -79,7 +138,23 @@ const latestPosts = (await getCollection("blog"))
   .slice(0, 3);
 const fmt = new Intl.DateTimeFormat("en", { year: "numeric", month: "short" });
 
-const feedbacks = Array.from({ length: 12 }, (_, i) => `/images/Portfolio/Feedbacks/${i}.jpeg`);
+// Transcribed verbatim from the Upwork review cards in
+// public/images/Portfolio/Feedbacks/. A trailing "\u2026" means Upwork itself
+// truncated the review in the original capture — nothing has been paraphrased.
+const feedbacks = [
+  { quote: "Inderjit is great. I have used him on previous projects and I will no doubt be using him again in the near future.", by: "Upwork client" },
+  { quote: "Went above and beyond. I recommend Inderjit without any reservation whatsoever for any ML project that you need done.", by: "Upwork client" },
+  { quote: "Inderjit was fantastic. I don\u2019t want to end this contract but he has a conflict that I have to respect. I will definitely hire him again as soon\u2026", by: "Upwork client" },
+  { quote: "Inderjit is a very passionate ML expert who is great at what he does. He is willing to fully understand the client\u2019s requirements before\u2026", by: "Upwork client" },
+  { quote: "It\u2019s a second project that I do with Inderjit. As in the first one, I had the pleasure working with a professional, independent and communicative\u2026", by: "Upwork client" },
+  { quote: "My work with Inder has been a very positive experience.", by: "Upwork client" },
+  { quote: "Inderjit is very responsive and brilliant in communication. His work is also of great quality and high standard. I look forward to working with\u2026", by: "Upwork client" },
+  { quote: "Excellent work from Inderjit. His willingness to help is exceptional and his quality of work and response times are great. I look forward to\u2026", by: "Upwork client" },
+  { quote: "Inderjit is excellent to work with, does high quality work, gets work done on time and work very well with clients to offer solutions and explain\u2026", by: "Upwork client" },
+  { quote: "Inder is a very smart entrepreneurial freelancer with a can-do attitude. He has gone above and beyond during our collaboration on an\u2026", by: "Upwork client" },
+  { quote: "Timely, thorough, skilled and insightful. No critiques.", by: "Python code manual reviewer" },
+  { quote: "Inderjit did an excellent job at understanding our requirements and executing on them via both the written end product, code base and video demonstrating the\u2026", by: "Upwork client" },
+];
 
 // GitHub contribution graph: fetch the default-green SVG (it has a clean 5-step
 // palette) and recolor it to the dark-theme lime gradient so every contribution
@@ -103,7 +178,7 @@ try {
     // make the root <svg> responsive (only the first width/height = root)
     ghSvg = ghSvg.replace(
       /width="(\d+)" height="(\d+)"/,
-      'viewBox="0 0 $1 $2" width="100%" height="auto" preserveAspectRatio="xMinYMin meet"'
+      'viewBox="0 0 $1 $2" preserveAspectRatio="xMinYMin meet"'
     );
   }
 } catch {
@@ -149,17 +224,23 @@ try {
       </div>
 
       <aside class="hero-meta mono" data-reveal style="--d:480ms">
+        <a class="hero-badges" href="#credentials" aria-label="Jump to verified credentials">
+          {certifications.map((c) => (
+            <img src={c.thumb} alt={`${c.name} badge`} width="34" height="34" loading="eager" />
+          ))}
+          <span class="hero-badges-note">2 active<br />certifications</span>
+        </a>
         <div class="meta-row">
           <span class="k">STATUS</span>
           <span class="v"><span class="live"></span>Open to ML roles</span>
         </div>
         <div class="meta-row">
           <span class="k">CERT</span>
-          <span class="v">Google Pro ML Engineer</span>
+          <span class="v">Claude Cert. Architect</span>
         </div>
         <div class="meta-row">
           <span class="k">CERT</span>
-          <span class="v">Google Cloud Engineer</span>
+          <span class="v">Google Pro ML Engineer</span>
         </div>
         <div class="meta-row">
           <span class="k">FOCUS</span>
@@ -178,11 +259,89 @@ try {
     </div>
   </section>
 
-  <!-- ============ 01 — WORK ============ -->
-  <section class="section" id="work">
+
+  <!-- ============ 01 — CREDENTIALS ============ -->
+  <section class="section creds" id="credentials">
     <div class="wrap">
       <div class="section-head" data-reveal>
         <span class="label idx">01</span>
+        <h2>Certified</h2>
+        <span class="rule"></span>
+        <a
+          class="label link creds-wallet"
+          href="https://www.credly.com/users/inderjit-singh-chahal/badges"
+          target="_blank"
+          rel="noopener noreferrer">Credly wallet &#8599;</a>
+      </div>
+
+      <div class="cert-grid">
+        {certifications.map((c, i) => (
+          <article class="cert" data-reveal style={`--d:${i * 110}ms; --glow:${c.glow}`}>
+            <a
+              class="cert-link"
+              href={`https://www.credly.com/badges/${c.id}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Verify ${c.name} on Credly`}>
+              <div class="cert-top">
+                <div class="medallion">
+                  <span class="medallion-glow" aria-hidden="true"></span>
+                  <img
+                    src={c.img}
+                    alt={`${c.name} badge, issued by ${c.issuer}`}
+                    width="240"
+                    height="240"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="cert-id">
+                  <span class="verified mono">
+                    <span class="verified-dot" aria-hidden="true"></span>Verified
+                  </span>
+                  <p class="cert-issuer mono">{c.issuer}</p>
+                  <h3 class="cert-name display">{c.name}</h3>
+                  <p class="cert-tier mono">{c.level}</p>
+                </div>
+              </div>
+
+              <p class="cert-blurb">{c.blurb}</p>
+
+              <dl class="cert-spec mono">
+                <div><dt>Issued</dt><dd>{c.issued}</dd></div>
+                <div><dt>Valid to</dt><dd>{c.validTo}</dd></div>
+              </dl>
+
+              <ul class="cert-skills mono">
+                {c.skills.map((sk) => <li>{sk}</li>)}
+                <li class="more">+{c.more}</li>
+              </ul>
+
+              <span class="cert-verify mono">Verify on Credly &#8599;</span>
+            </a>
+          </article>
+        ))}
+      </div>
+
+      <div class="cert-past mono" data-reveal style="--d:260ms">
+        <span class="label">Previously held</span>
+        {pastCertifications.map((c) => (
+          <a
+            class="past-item link"
+            href={`https://www.credly.com/badges/${c.id}`}
+            target="_blank"
+            rel="noopener noreferrer">
+            {c.name} <span class="past-meta">· {c.issuer} · {c.window}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 02 — WORK ============ -->
+  <section class="section" id="work">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <span class="label idx">02</span>
         <h2>Selected Work</h2>
         <span class="rule"></span>
         <span class="label">04 projects</span>
@@ -213,11 +372,11 @@ try {
     </div>
   </section>
 
-  <!-- ============ 02 — ABOUT ============ -->
+  <!-- ============ 03 — ABOUT ============ -->
   <section class="section" id="about">
     <div class="wrap">
       <div class="section-head" data-reveal>
-        <span class="label idx">02</span>
+        <span class="label idx">03</span>
         <h2>About</h2>
         <span class="rule"></span>
       </div>
@@ -230,11 +389,12 @@ try {
             problem into a simple implementation.
           </p>
           <p>
-            I'm a <strong>Google Certified Professional Machine Learning
-            Engineer</strong> and <strong>Google Certified Cloud Engineer</strong>,
-            and I love designing architectures for cloud-based applications. I
-            enjoy debugging the hard, tangled bugs, and I give back on community
-            platforms like Stack&nbsp;Overflow and Reddit.
+            I'm a <strong>Google Cloud Certified Professional Machine Learning
+            Engineer</strong> and a <strong>Claude Certified Architect
+            (Professional)</strong>, and I love designing architectures for
+            cloud-based applications. I enjoy debugging the hard, tangled bugs,
+            and I give back on community platforms like Stack&nbsp;Overflow and
+            Reddit.
           </p>
           <p>
             Away from the day job, I work with <strong>financial markets</strong>
@@ -266,7 +426,10 @@ try {
           {ghSvg ? (
             <Fragment set:html={ghSvg} />
           ) : (
-            <img src="https://ghchart.rshah.org/c6f24e/chahalinder0007" alt="GitHub contribution chart for chahalinder0007" loading="lazy" />
+            <p class="gh-fallback mono">
+              Contribution chart unavailable at build time &mdash;
+              <a class="link" href="https://github.com/chahalinder0007" target="_blank" rel="noopener noreferrer">view it on GitHub &#8599;</a>
+            </p>
           )}
         </div>
         <div class="gh-legend mono">
@@ -286,7 +449,7 @@ try {
   <section class="section" id="skills">
     <div class="wrap">
       <div class="section-head" data-reveal>
-        <span class="label idx">02.1</span>
+        <span class="label idx">03.1</span>
         <h2>Stack &amp; Tools</h2>
         <span class="rule"></span>
       </div>
@@ -299,29 +462,6 @@ try {
             </ul>
           </div>
         ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ 03 — CREDENTIALS ============ -->
-  <section class="section" id="credentials">
-    <div class="wrap">
-      <div class="section-head" data-reveal>
-        <span class="label idx">03</span>
-        <h2>Credentials</h2>
-        <span class="rule"></span>
-      </div>
-      <div class="cred-grid">
-        <a class="cred" href="https://api.accredible.com/v1/frontend/credential_website_embed_image/certificate/35290584" target="_blank" rel="noopener noreferrer" data-reveal>
-          <span class="cred-issuer mono">Google Cloud</span>
-          <span class="cred-name display">Professional Machine Learning Engineer</span>
-          <span class="cred-verify mono">Verify ↗</span>
-        </a>
-        <a class="cred" href="https://www.credential.net/384317b7-698c-49b2-b68a-ebdab59b8f46" target="_blank" rel="noopener noreferrer" data-reveal style="--d:100ms">
-          <span class="cred-issuer mono">Google Cloud</span>
-          <span class="cred-name display">Associate Cloud Engineer</span>
-          <span class="cred-verify mono">Verify ↗</span>
-        </a>
       </div>
     </div>
   </section>
@@ -359,15 +499,21 @@ try {
         <span class="label idx">05</span>
         <h2>What clients say</h2>
         <span class="rule"></span>
-        <span class="label">Verbatim</span>
+        <span class="label">Verbatim &middot; Upwork</span>
       </div>
     </div>
-    <div class="marquee" data-reveal aria-label="Client testimonials">
-      <div class="marquee-track">
-        {[...feedbacks, ...feedbacks].map((src) => (
-          <figure class="fb"><img src={src} alt="Client testimonial" loading="lazy" /></figure>
+    <div class="marquee" data-reveal>
+      <ul class="marquee-track" aria-label="Client testimonials">
+        {[...feedbacks, ...feedbacks].map((f, i) => (
+          <li class="fb" aria-hidden={i >= feedbacks.length ? "true" : undefined}>
+            <figure>
+              <span class="fb-stars" role="img" aria-label="Rated 5 out of 5">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+              <blockquote class="fb-quote">{f.quote}</blockquote>
+              <figcaption class="fb-by mono">{f.by}</figcaption>
+            </figure>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   </section>
 
@@ -435,7 +581,7 @@ try {
     to { opacity: 0.9; transform: none; }
   }
   @media (prefers-reduced-motion: reduce) {
-    .hero-bg img { animation: none; }
+    .hero-bg video { animation: none; }
   }
   .hero-grid {
     display: grid;
@@ -528,6 +674,26 @@ try {
     box-shadow: 0 0 8px var(--accent);
   }
 
+  .hero-badges {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid var(--line-soft);
+    background: color-mix(in srgb, var(--accent) 4%, transparent);
+    transition: background 0.35s var(--ease);
+  }
+  .hero-badges:hover { background: color-mix(in srgb, var(--accent) 9%, transparent); }
+  .hero-badges img {
+    width: 34px; height: 34px; object-fit: contain;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+  }
+  .hero-badges-note {
+    margin-left: auto; text-align: right;
+    font-size: 0.6rem; line-height: 1.35; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--fg-faint);
+  }
+
   .hero-strip {
     margin-top: clamp(3rem, 7vw, 5rem);
     display: flex;
@@ -555,6 +721,175 @@ try {
           var(--ink) 96%),
         linear-gradient(90deg, var(--ink) 4%, transparent 65%);
     }
+  }
+
+/* ---------------- CREDENTIALS ----------------
+     Each badge sits in a recessed "medallion well" with a glow tinted to its
+     own brand, so the terracotta shield and the pale Google disc read as the
+     same object. The lime stays the only UI signal colour. */
+  .creds { border-top: 0; }
+  .creds-wallet { color: var(--fg-dim); }
+
+  .cert-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(1rem, 2.5vw, 1.6rem);
+  }
+
+  .cert {
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background:
+      radial-gradient(120% 80% at 12% 0%, rgba(var(--glow), 0.08) 0%, transparent 62%),
+      var(--ink-2);
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.45s var(--ease), transform 0.45s var(--ease);
+  }
+  /* accent rule that draws down the left edge on hover */
+  .cert::after {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 2px;
+    background: var(--accent);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.5s var(--ease);
+  }
+  .cert:hover {
+    transform: translateY(-4px);
+    border-color: color-mix(in srgb, var(--accent) 34%, var(--line));
+  }
+  .cert:hover::after { transform: scaleY(1); }
+  .cert-link {
+    display: flex;
+    flex-direction: column;
+    gap: 1.35rem;
+    padding: clamp(1.5rem, 3vw, 2.1rem);
+    height: 100%;
+  }
+  .cert-link:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: -4px;
+    border-radius: 6px;
+  }
+
+  .cert-top { display: flex; gap: clamp(1.1rem, 2.5vw, 1.6rem); align-items: center; }
+
+  .medallion {
+    position: relative;
+    flex: 0 0 auto;
+    width: clamp(104px, 13vw, 132px);
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background:
+      radial-gradient(circle at 50% 42%, rgba(var(--glow), 0.16) 0%, transparent 68%),
+      var(--ink-3);
+    box-shadow: inset 0 0 0 1px var(--line-soft);
+  }
+  .medallion-glow {
+    position: absolute;
+    inset: -18%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(var(--glow), 0.26) 0%, transparent 62%);
+    filter: blur(14px);
+    opacity: 0.75;
+    transition: opacity 0.5s var(--ease);
+    pointer-events: none;
+  }
+  .cert:hover .medallion-glow { opacity: 1; }
+  /* sized by eye: the Google disc carries its own padding, the Anthropic
+     shield bleeds to its edges, so they need different insets to read equal */
+  .medallion img {
+    position: relative;
+    width: 74%;
+    height: auto;
+    transition: transform 0.6s var(--ease);
+  }
+  .cert:first-child .medallion img { width: 68%; }
+  .cert:hover .medallion img { transform: scale(1.05); }
+
+  .cert-id { min-width: 0; }
+  .verified {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.64rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent);
+    background: color-mix(in srgb, var(--accent) 8%, transparent);
+    padding: 0.2rem 0.5rem 0.2rem 0.45rem;
+    border-radius: 2px;
+    margin-bottom: 0.7rem;
+  }
+  .verified-dot {
+    width: 5px; height: 5px; border-radius: 50%;
+    background: var(--accent);
+    animation: pulse-sm 2.6s var(--ease) infinite;
+  }
+  @keyframes pulse-sm {
+    0%   { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 60%, transparent); }
+    70%  { box-shadow: 0 0 0 5px transparent; }
+    100% { box-shadow: 0 0 0 0 transparent; }
+  }
+  .cert-issuer {
+    font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--fg-faint); margin-bottom: 0.35rem;
+  }
+  .cert-name {
+    font-size: clamp(1.3rem, 1rem + 1.3vw, 1.85rem);
+    font-weight: 400; line-height: 1.06; color: var(--fg);
+    transition: color 0.3s var(--ease);
+  }
+  .cert:hover .cert-name { color: var(--accent); }
+  .cert-tier {
+    margin-top: 0.45rem; font-size: 0.68rem; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--fg-faint);
+  }
+
+  .cert-blurb { color: var(--fg-dim); font-size: 0.94rem; line-height: 1.6; }
+
+  .cert-spec { border-top: 1px solid var(--line-soft); display: grid; }
+  .cert-spec > div {
+    display: grid; grid-template-columns: 88px 1fr; gap: 1rem;
+    padding: 0.55rem 0; border-bottom: 1px solid var(--line-soft); font-size: 0.78rem;
+  }
+  .cert-spec dt {
+    color: var(--fg-faint); font-size: 0.66rem; letter-spacing: 0.14em;
+    text-transform: uppercase; padding-top: 2px;
+  }
+  .cert-spec dd { color: var(--fg); }
+
+  .cert-skills { list-style: none; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .cert-skills li {
+    font-size: 0.65rem; letter-spacing: 0.06em; color: var(--fg-dim);
+    border: 1px solid var(--line); border-radius: 2px; padding: 0.24rem 0.5rem;
+  }
+  .cert-skills .more { color: var(--fg-faint); border-style: dashed; }
+
+  .cert-verify {
+    margin-top: auto; font-size: 0.76rem; color: var(--accent);
+    display: inline-flex; align-items: center; gap: 0.3rem;
+  }
+
+  .cert-past {
+    display: flex; align-items: baseline; gap: 1rem 1.4rem; flex-wrap: wrap;
+    margin-top: clamp(1.6rem, 4vw, 2.4rem);
+    padding-top: 1.3rem; border-top: 1px solid var(--line-soft);
+    font-size: 0.78rem;
+  }
+  .past-item { color: var(--fg-dim); }
+  .past-meta { color: var(--fg-faint); }
+
+  @media (max-width: 860px) { .cert-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 420px) {
+    .cert-top { flex-direction: column; align-items: flex-start; gap: 1.1rem; }
+    .medallion { width: 112px; }
   }
 
   /* ---------------- PROJECT CARD ---------------- */
@@ -617,7 +952,6 @@ try {
   .spec dt { color: var(--fg-faint); letter-spacing: 0.12em; font-size: 0.68rem; padding-top: 2px; }
   .spec dd { color: var(--fg-dim); }
   .spec dd b { color: var(--accent); font-weight: 600; }
-  .proj-links { display: flex; gap: 1.5rem; font-size: 0.8rem; }
 
   .proj-stack { display: flex; flex-direction: column; gap: clamp(3.5rem, 9vw, 7rem); }
   .proj:nth-child(even) .proj-media { order: 2; }
@@ -671,7 +1005,7 @@ try {
   .gh-note { font-size: 0.74rem; color: var(--fg-dim); }
   .gh-chart { width: 100%; overflow-x: auto; }
   .gh-chart :global(svg) { width: 100%; height: auto; min-width: 700px; display: block; }
-  .gh-chart img { width: 100%; min-width: 700px; display: block; }
+  .gh-fallback { color: var(--fg-dim); font-size: 0.8rem; padding: 1.5rem 0; }
   .gh-legend {
     display: flex; align-items: center; gap: 0.45rem;
     justify-content: flex-end; margin-top: 1.2rem;
@@ -754,12 +1088,24 @@ try {
   }
   .marquee:hover .marquee-track { animation-play-state: paused; }
   @keyframes scroll-x { to { transform: translateX(-50%); } }
+  .marquee-track { list-style: none; }
   .fb {
-    flex: 0 0 auto; width: clamp(220px, 26vw, 320px);
-    border: 1px solid var(--line); border-radius: 4px; overflow: hidden;
+    flex: 0 0 auto; width: clamp(260px, 30vw, 360px);
+    border: 1px solid var(--line); border-radius: 4px;
     background: var(--ink-2);
+    padding: 1.5rem 1.6rem;
+    display: flex;
   }
-  .fb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .fb figure { display: flex; flex-direction: column; gap: 0.85rem; }
+  .fb-stars { color: var(--accent); font-size: 0.8rem; letter-spacing: 0.18em; }
+  .fb-quote {
+    font-family: var(--display); font-size: 1.02rem; line-height: 1.45;
+    color: var(--fg); font-weight: 380; letter-spacing: -0.01em;
+  }
+  .fb-by {
+    margin-top: auto; font-size: 0.66rem; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--fg-faint);
+  }
   @media (prefers-reduced-motion: reduce) {
     .marquee-track { animation: none; flex-wrap: nowrap; overflow-x: auto; }
   }

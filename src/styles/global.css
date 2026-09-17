@@ -13,7 +13,7 @@
   --line-soft:  rgba(237, 234, 225, 0.06);
   --fg:         #ece9e1;   /* warm off-white                              */
   --fg-dim:     #9a9b96;   /* muted body                                  */
-  --fg-faint:   #6a6c70;   /* labels, captions                           */
+  --fg-faint:   #8b8d92;   /* labels, captions — 5.9:1 on --ink (WCAG AA)  */
   --accent:     #c6f24e;   /* electric lime — the single signal color     */
   --accent-dim: #97b93a;
   --accent-ink: #0c0d10;   /* text on accent                              */
@@ -33,7 +33,7 @@
 
 /* ---------- reset ---------- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 76px; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }

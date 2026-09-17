@@ -21,7 +21,12 @@ const fmt = new Intl.DateTimeFormat("en", {
 });
 ---
 
-<Base title={`${post.data.title} — Inderjit Singh Chahal`} description={post.data.description}>
+<Base
+  title={`${post.data.title} — Inderjit Singh Chahal`}
+  description={post.data.description}
+  image={post.data.heroImage ?? "/images/og.png"}
+  type="article"
+  publishedTime={post.data.date}>
   <Nav />
 
   <article class="post">

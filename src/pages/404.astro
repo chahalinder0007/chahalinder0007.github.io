@@ -1,0 +1,44 @@
+---
+import Base from "../layouts/Base.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Base
+  title="Not found — Inderjit Singh Chahal"
+  description="That page doesn't exist. The site was rebuilt in 2026 and older URLs have moved.">
+  <Nav />
+
+  <section class="section nf">
+    <div class="wrap nf-inner">
+      <p class="label idx">Error 404</p>
+      <h1 class="display nf-title">This page went<br /><em>out of distribution.</em></h1>
+      <p class="nf-lede">
+        The site was rebuilt in 2026, so a few older links no longer resolve.
+        Everything worth reading is still here:
+      </p>
+      <nav class="nf-links mono" aria-label="Recovery links">
+        <a class="link" href="/">Home &#8594;</a>
+        <a class="link" href="/#credentials">Certifications &#8594;</a>
+        <a class="link" href="/#work">Selected work &#8594;</a>
+        <a class="link" href="/blog">Writing &#8594;</a>
+      </nav>
+    </div>
+  </section>
+
+  <Footer />
+</Base>
+
+<style>
+  .nf { border-top: 0; padding-top: clamp(4rem, 12vw, 9rem); }
+  .nf-inner { max-width: 640px; }
+  .nf .idx { color: var(--accent); }
+  .nf-title {
+    font-size: clamp(2.2rem, 1.4rem + 3.4vw, 3.8rem);
+    font-weight: 380; line-height: 1.04; margin: 1.1rem 0 1.4rem;
+  }
+  .nf-title em { font-style: italic; color: var(--accent); font-weight: 340; }
+  .nf-lede { color: var(--fg-dim); max-width: 46ch; font-size: 1.08rem; }
+  .nf-links { display: flex; flex-wrap: wrap; gap: 0.9rem 1.8rem; margin-top: 2.2rem; font-size: 0.82rem; }
+  .nf-links a { color: var(--fg-dim); }
+</style>
