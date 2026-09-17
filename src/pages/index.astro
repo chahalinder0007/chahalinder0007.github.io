@@ -538,6 +538,70 @@ try {
         if (!document.hidden) play();
       });
     }
+
+    // One-time nudge down to the credentials section for a visitor who has
+    // landed and not moved. It is deliberately timid: any wheel, touch, key or
+    // pointer input cancels it (before or mid-flight), it never fires twice in
+    // a session, and it stays out of the way of anyone who arrived with a
+    // destination in mind or asked for reduced motion.
+    (() => {
+      const KEY = "creds-nudge";
+      const target = document.getElementById("credentials");
+      const root = document.documentElement;
+      if (!target) return;
+      if (location.hash) return;                       // they aimed at a section
+      if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      try { if (sessionStorage.getItem(KEY)) return; } catch {}
+
+      const moved = () => window.scrollY > 4;
+      if (moved()) return;
+
+      let cancelled = false;
+      const EVENTS = ["wheel", "touchstart", "keydown", "pointerdown"];
+      const stop = () => { cancelled = true; disarm(); teardown(); };
+      const teardown = () => EVENTS.forEach((e) => window.removeEventListener(e, stop));
+      EVENTS.forEach((e) => window.addEventListener(e, stop, { passive: true }));
+
+      // count ten seconds of the page actually being looked at: a tab opened in
+      // the background should still get its nudge when it is brought forward
+      let timer = null;
+      const arm = () => { if (timer === null && !document.hidden && !cancelled) timer = setTimeout(fire, 10000); };
+      const disarm = () => { if (timer !== null) { clearTimeout(timer); timer = null; } };
+      document.addEventListener("visibilitychange", () => (document.hidden ? disarm() : arm()));
+
+      function fire() {
+        timer = null;
+        if (cancelled || moved()) return teardown();
+
+        const NAV = 76;
+        const start = window.scrollY;
+        const end = target.getBoundingClientRect().top + start - NAV;
+        // already on screen? then there is nothing to point at
+        if (end - start < innerHeight * 0.45) return teardown();
+
+        try { sessionStorage.setItem(KEY, "1"); } catch {}
+
+        // drive it per-frame so a cancel lands immediately; native smooth
+        // scrolling would keep going after we stopped listening
+        const prev = root.style.scrollBehavior;
+        root.style.scrollBehavior = "auto";
+        const dist = end - start;
+        const DUR = 1500;
+        const t0 = performance.now();
+        const ease = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+
+        const step = (now) => {
+          if (cancelled) { root.style.scrollBehavior = prev; return; }
+          const p = Math.min((now - t0) / DUR, 1);
+          window.scrollTo(0, start + dist * ease(p));
+          if (p < 1) requestAnimationFrame(step);
+          else { root.style.scrollBehavior = prev; teardown(); }
+        };
+        requestAnimationFrame(step);
+      }
+
+      arm();
+    })();
   </script>
 </Base>
 
